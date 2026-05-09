@@ -32,6 +32,10 @@ npm test
 | `range` | [utils/range.js](utils/range.js) | Generate a numeric range array |
 | `sum` / `average` / `median` | [utils/sum.js](utils/sum.js) | Math aggregates for arrays of numbers |
 | `binarySearch` | [utils/binary-search.js](utils/binary-search.js) | Binary search on a sorted array |
+| `clampArray` | [utils/clamp-array.js](utils/clamp-array.js) | Clamp all numeric values in an array to a [min, max] range |
+| `first` / `last` | [utils/first-last.js](utils/first-last.js) | Get the first or last N items of an array |
+| `frequency` | [utils/frequency.js](utils/frequency.js) | Build a frequency map counting occurrences of each item |
+| `swap` | [utils/swap.js](utils/swap.js) | Swap two elements by index (returns new array) |
 
 ### Object Utilities
 
@@ -49,6 +53,9 @@ npm test
 | `mapToObject` / `objectToMap` | [utils/map-convert.js](utils/map-convert.js) | Convert between Map and plain object |
 | `compactObject` | [utils/compact.js](utils/compact.js) | Remove falsy-valued keys from an object |
 | `objectSize` | [utils/object-size.js](utils/object-size.js) | Estimate serialized size of an object in bytes |
+| `invert` | [utils/invert.js](utils/invert.js) | Swap keys and values of an object |
+| `getNestedValue` | [utils/get-nested.js](utils/get-nested.js) | Safely read a deeply nested value using a dot-path string |
+| `setNestedValue` | [utils/set-nested.js](utils/set-nested.js) | Immutably set a deeply nested value using a dot-path string |
 
 ### String Utilities
 
@@ -64,6 +71,11 @@ npm test
 | `padStart` / `padEnd` / `zeroPad` | [utils/pad.js](utils/pad.js) | Pad strings to a minimum length |
 | `chunkString` / `splitLines` / `wordWrap` | [utils/chunk-string.js](utils/chunk-string.js) | Split and wrap string content |
 | `byteSize` | [utils/string-bytes.js](utils/string-bytes.js) | Get the UTF-8 byte size of a string |
+| `stripHtml` | [utils/strip-html.js](utils/strip-html.js) | Remove all HTML tags from a string |
+| `stringSimilarity` | [utils/string-similarity.js](utils/string-similarity.js) | Dice coefficient similarity score between two strings (0–1) |
+| `levenshtein` | [utils/levenshtein.js](utils/levenshtein.js) | Levenshtein edit distance between two strings |
+| `regexEscape` | [utils/regex-escape.js](utils/regex-escape.js) | Escape special regex characters so a string can be used in a RegExp |
+| `countOccurrences` | [utils/count-occurrences.js](utils/count-occurrences.js) | Count how many times a substring appears in a string |
 
 ### Number & Math Utilities
 
@@ -77,6 +89,14 @@ npm test
 | `formatCurrency` | [utils/currency.js](utils/currency.js) | Format a number as currency |
 | `formatDate` / `timeAgo` | [utils/format-date.js](utils/format-date.js) | Date display and relative time |
 | `hash` | [utils/hash.js](utils/hash.js) | Fast djb2 non-cryptographic string hash |
+| `factorial` | [utils/factorial.js](utils/factorial.js) | Compute the factorial of n (iterative, safe for large n) |
+| `fibonacci` | [utils/fibonacci.js](utils/fibonacci.js) | Return the nth Fibonacci number (0-indexed, iterative) |
+| `gcd` / `lcm` | [utils/gcd-lcm.js](utils/gcd-lcm.js) | Greatest common divisor and least common multiple |
+| `isPrime` | [utils/is-prime.js](utils/is-prime.js) | Check whether a number is prime |
+| `lerp` | [utils/lerp.js](utils/lerp.js) | Linear interpolation and numeric range mapping |
+| `movingAverage` | [utils/moving-average.js](utils/moving-average.js) | Simple moving average over a sliding window |
+| `toRoman` / `fromRoman` | [utils/roman-numerals.js](utils/roman-numerals.js) | Convert integers (1–3999) to/from Roman numeral strings |
+| `numberToWords` | [utils/number-to-words.js](utils/number-to-words.js) | Convert a non-negative integer to English words |
 
 ### Function Utilities
 
@@ -95,6 +115,7 @@ npm test
 | `asyncMap` / `asyncFilter` | [utils/async-map.js](utils/async-map.js) | Async versions of map and filter |
 | `asyncReduce` | [utils/async-reduce.js](utils/async-reduce.js) | Sequential async reduce |
 | `allSettledSplit` | [utils/promise-split.js](utils/promise-split.js) | Split fulfilled vs rejected promises |
+| `composeMiddleware` | [utils/middleware.js](utils/middleware.js) | Compose a chain of middleware functions (koa/express style) |
 
 ### Data Structures
 
@@ -104,9 +125,14 @@ npm test
 | `Stack` | [utils/stack.js](utils/stack.js) | LIFO stack |
 | `LinkedList` | [utils/linked-list.js](utils/linked-list.js) | Singly linked list |
 | `LRUCache` | [utils/lru-cache.js](utils/lru-cache.js) | Least Recently Used cache |
+| `PriorityQueue` | [utils/priority-queue.js](utils/priority-queue.js) | Min-heap priority queue with custom comparator |
+| `Trie` | [utils/trie.js](utils/trie.js) | Prefix tree for fast string prefix lookup and autocomplete |
+| `TTLCache` | [utils/ttl-cache.js](utils/ttl-cache.js) | Cache where entries automatically expire after a TTL |
 | `FSM` | [utils/fsm.js](utils/fsm.js) | Lightweight finite state machine |
 | `EventEmitter` | [utils/event-emitter.js](utils/event-emitter.js) | Pub/sub event emitter |
+| `PubSub` | [utils/pub-sub.js](utils/pub-sub.js) | Standalone publish-subscribe event bus |
 | `Observable` | [utils/observable.js](utils/observable.js) | Reactive observable value |
+| `RateLimiter` | [utils/rate-limiter.js](utils/rate-limiter.js) | Token bucket rate limiter |
 
 ### Validation & Type Utilities
 
@@ -129,6 +155,9 @@ npm test
 | `parseQueryString` / `toQueryString` | [utils/parse-query-string.js](utils/parse-query-string.js) | Query string parse and serialize |
 | `hexToRgb` / `rgbToHex` | [utils/color.js](utils/color.js) | Color format conversion |
 | `deepFreeze` | [utils/deep-freeze.js](utils/deep-freeze.js) | Make an object recursively immutable |
+| `encodeBase64` / `decodeBase64` | [utils/base64.js](utils/base64.js) | Base64 encode/decode (works in Node.js and browsers) |
+| `formatDuration` / `parseDuration` | [utils/parse-duration.js](utils/parse-duration.js) | Format milliseconds to a human-readable string and parse duration strings |
+| `storage` | [utils/storage.js](utils/storage.js) | Safe localStorage wrapper with JSON serialization and fallback |
 
 ---
 
